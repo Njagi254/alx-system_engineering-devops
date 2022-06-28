@@ -1,2 +1,2 @@
-0x02-Shell redir readme
-Prints hellos world
+#!/bin/bash
+My readme file for Hello world
