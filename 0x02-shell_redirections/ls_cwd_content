@@ -1,1 +1,17 @@
-lrwxrwxrwx 1 root root 7 Mar 16 10:07 /bin -> usr/bin
+total 52
+drwxr-xr-x 2 root root 304 Jun 29 06:39 .
+drwxr-xr-x 5 root root  91 Jun 28 04:36 ..
+-rwxr--r-- 1 root root  32 Jun 28 09:31 0-hello_world
+-rwxr--r-- 1 root root  30 Jun 28 10:08 1-confused_smiley
+-rwxr--r-- 1 root root  28 Jun 28 11:15 2-hellofile
+-rwxr--r-- 1 root root  39 Jun 28 11:46 3-twofiles
+-rwxr--r-- 1 root root  33 Jun 28 12:01 4-lastlines
+-rwxr--r-- 1 root root  33 Jun 28 12:49 5-firstlines
+-rwxr--r-- 1 root root  36 Jun 28 13:47 6-third_line
+-rwxr--r-- 1 root root  78 Jun 28 16:41 7-file
+-rwxr--r-- 1 root root  36 Jun 29 06:38 8-cwd_state
+-rw-r--r-- 1 root root  38 Jun 28 16:35 \*\'Best
+-rw-r--r-- 1 root root  12 Jun 28 16:42 \*\\'"Best School"\'\\*$\?\*\*\*\*\*:)
+-rw-r--r-- 1 root root  54 Jun 29 06:15 file-lists.txt
+-rw-r--r-- 1 root root   0 Jun 29 06:39 ls_cwd_content
+-rw-r--r-- 1 root root  90 Jun 28 09:05 README.md
