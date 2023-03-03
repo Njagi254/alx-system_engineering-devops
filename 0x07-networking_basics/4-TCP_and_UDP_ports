@@ -1,9 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# script that displays TCP and UDP listening ports
 
-# Display listening ports, PID and name of the program to which each socket belongs
-
-echo "Listening ports:"
-netstat -tulpn | awk '{print $4,$7}' | grep LISTEN
-echo ""
-echo "PID and name of the program to which each socket belongs:"
-netstat -tulpn | awk '{print $4,$7}' | grep LISTEN | awk -F\/ '{print $2,$1}'
+netstat -l
