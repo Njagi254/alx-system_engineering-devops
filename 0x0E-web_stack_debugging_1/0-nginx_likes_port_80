@@ -1,4 +1,20 @@
 #!/usr/bin/env bash
-#fix port 80 access
-sudo sed -i "s/8080 default_server/80 default_server/" /etc/nginx/sites-enabled/default
-sudo service nginx restart
+# Start a new Ubuntu container
+docker run -it --name override_nginx ubuntu /bin/bash
+
+# Update and install packages
+apt-get update
+apt-get install -y curl nginx
+
+# Edit Nginx default configuration
+sed -i 's/listen 80 default_server;/listen 80;/' /etc/nginx/sites-enabled/default
+
+# Restart Nginx service
+service nginx restart
+
+# Exit the container
+exit
+
+# Commit changes to create a new image
+docker commit override_nginx 0-nginx_likes_port_80
+
