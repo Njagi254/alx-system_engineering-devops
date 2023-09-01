@@ -1,20 +1,19 @@
-#!/usr/bin/env bash
-# Start a new Ubuntu container
-docker run -it --name override_nginx ubuntu /bin/bash
+#!/bin/env bash
 
-# Update and install packages
+# Update package lists and install Nginx
 apt-get update
-apt-get install -y curl nginx
+apt-get install -y nginx
 
-# Edit Nginx default configuration
-sed -i 's/listen 80 default_server;/listen 80;/' /etc/nginx/sites-enabled/default
+# Edit Nginx default configuration to listen on port 80
+sed -i 's/listen 80 default_server;/listen 80;/' /etc/nginx/sites-available/default
 
-# Restart Nginx service
+# Restart Nginx service to apply the changes
 service nginx restart
 
-# Exit the container
-exit
-
-# Commit changes to create a new image
-docker commit override_nginx 0-nginx_likes_port_80
+# Check if Nginx is running and listening on port 80
+if [ "$(curl -s -o /dev/null -w "%{http_code}" http://localhost)" == "200" ]; then
+  echo "Nginx is running and listening on port 80."
+else
+  echo "Nginx is not configured correctly."
+fi
 
